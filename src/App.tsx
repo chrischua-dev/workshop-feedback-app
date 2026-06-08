@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useMemo, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { generateClient } from 'aws-amplify/data';
 import type { Schema } from '../amplify/data/resource';
 import './styles.css';
@@ -67,13 +67,6 @@ function App() {
       setIsLoading(false);
     });
   }, []);
-
-  const averageRating = useMemo(() => {
-    if (feedbackList.length === 0) return 'No ratings yet';
-
-    const total = feedbackList.reduce((sum, feedback) => sum + feedback.rating, 0);
-    return `${(total / feedbackList.length).toFixed(1)} / 5`;
-  }, [feedbackList]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -181,10 +174,6 @@ function App() {
             <div>
               <h2>Submitted feedback</h2>
               <p>{feedbackList.length} response(s)</p>
-            </div>
-            <div className="rating-summary">
-              <span>Average</span>
-              <strong>{averageRating}</strong>
             </div>
           </div>
 

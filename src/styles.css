@@ -181,26 +181,6 @@ button:disabled {
   color: #6a7892;
 }
 
-.rating-summary {
-  min-width: 120px;
-  border-radius: 20px;
-  padding: 14px;
-  background: #f1f6ff;
-  text-align: center;
-}
-
-.rating-summary span {
-  display: block;
-  color: #6a7892;
-  font-size: 0.82rem;
-  font-weight: 700;
-}
-
-.rating-summary strong {
-  display: block;
-  margin-top: 4px;
-}
-
 .empty-state {
   display: grid;
   place-items: center;
